@@ -27,7 +27,7 @@ Clone this repository:
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/project-name.git
+git clone https://github.com/Nishchal05/Ecommerceweb.git
 cd project-name
 Install dependencies:
 
@@ -43,9 +43,6 @@ env
 Copy
 Edit
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your-cloud-name
-CLOUDINARY_API_KEY=your-api-key
-CLOUDINARY_API_SECRET=your-api-secret
-
 DATABASE_URL=postgresql://your-username:your-password@localhost:5432/your-database-name?schema=public
 Set up Prisma:
 
@@ -77,9 +74,4 @@ Database Interaction: The app interacts with a PostgreSQL database to fetch, dis
 
 Environment Variables
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: Your Cloudinary cloud name (required for image uploading).
-
-CLOUDINARY_API_KEY: Your Cloudinary API key.
-
-CLOUDINARY_API_SECRET: Your Cloudinary API secret.
-
-DATABASE_URL: The connection string for your PostgreSQL database (use Supabase if you prefer a managed service).
+DATABASE_URL: The connection string for your PostgreSQL database 
