@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int       @id @default(autoincrement())
+  name     String
+  email    String    @unique
+  password String
+  orders   Order[] // Existing relation to orders
+  products Product[] // 👈 Add this line (reverse relation to Product)
+}
+
+model Product {
+  id          Int     @id @default(autoincrement())
+  name        String
+  price       Float
+  description String
+  imageUrl    String
+  seller      User    @relation(fields: [sellerid], references: [id])
+  sellerid    Int
+  orders      Order[] @relation("OrderProducts")
+}
+
+model Order {
+  id        Int       @id @default(autoincrement())
+  user      User      @relation(fields: [userId], references: [id])
+  userId    Int
+  products  Product[] @relation("OrderProducts") // 👈 define same relation name
+  createdAt DateTime  @default(now())
+}
